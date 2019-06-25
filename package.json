@@ -1,0 +1,73 @@
+{
+	"name": "teaspn-sdk",
+	"description": "SDK for developing TEASPN clients and servers",
+	"author": "TEASPN developers",
+	"license": "MIT",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/teaspn/teaspn-sdk"
+	},
+	"publisher": "teaspn",
+	"categories": [],
+	"keywords": [
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"activationEvents": [
+		"onLanguage:plaintext"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "teaspn.searchExample",
+				"title": "Search example sentences",
+				"category": "TEASPN"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "TEASPN configuration",
+			"properties": {
+				"teaspn.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"teaspn.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "verbose",
+					"description": "Traces the communication between VS Code and the TEASPN server."
+				},
+				"teaspn.executable": {
+					"type": "string",
+					"default": "run-teaspn-server",
+					"description": "TEASPN server executable"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.0",
+		"@types/node": "^8.0.0",
+		"tslint": "^5.16.0",
+		"typescript": "^3.4.5"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "teaspn-sdk-client",
+	"description": "TEASPN client sample code",
+	"author": "TEASPN developers",
+	"license": "MIT",
+	"version": "0.1.0",
+	"publisher": "teaspn",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/teaspn/teaspn-sdk"
+	},
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"scripts": {
+		"update-vscode": "vscode-install",
+		"postinstall": "vscode-install"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^4.1.4"
+	},
+	"devDependencies": {
+		"vscode": "^1.1.34"
+	}
+}

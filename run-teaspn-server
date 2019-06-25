@@ -1,0 +1,7 @@
+#! /bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd $SCRIPT_DIR
+export PYTHONPATH=$(pwd)
+source .pyenv/bin/activate
+python server/teaspn_server.py

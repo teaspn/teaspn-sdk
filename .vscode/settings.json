@@ -1,0 +1,7 @@
+{
+	"editor.insertSpaces": false,
+	"tslint.enable": true,
+	"typescript.tsc.autoDetect": "off",
+	"typescript.preferences.quoteStyle": "single",
+	"python.pythonPath": ".pyenv/bin/python3"
+}
